@@ -1,0 +1,3 @@
+SELECT SUM(litrosAbast) 
+FROM ABASTECIMENTO 
+WHERE idPosto = 1;

@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS ABASTECIMENTO (
+	CPF CHAR (11),
+	dataAbast DATE,
+	valorAbast DECIMAL (5,2),
+	litrosAbast DECIMAL (4,2),
+	idPosto INT,
+	idBomba INT,
+	placaCarro VARCHAR (7),
+	FOREIGN KEY (CPF) REFERENCES CLIENTE(CPF),
+	FOREIGN KEY (idPosto) REFERENCES POSTO(idPosto),
+	FOREIGN KEY (idBomba) REFERENCES BOMBA(idBomba),
+	FOREIGN KEY (placaCarro) REFERENCES CARRO(placaCarro)
+);

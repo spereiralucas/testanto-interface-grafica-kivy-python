@@ -1,0 +1,85 @@
+<GerenciadorDeTelas>:
+	id: gerenciadorDeTelas
+	Menu:
+		name: 'menu'
+	JanelaPrincipal:
+		name: 'janela_principal'
+
+<Menu>:
+	BoxLayout:
+		spacing: 20
+		padding: 200
+		orientation: 'vertical'
+		Button:
+			text: 'Iniciar'
+			on_release: app.root.current = 'janela_principal'
+		Button:
+			text: 'Sair'
+			on_release: app.stop()
+
+<JanelaPrincipal>:
+	BoxLayout:
+		orientation: 'vertical'
+
+
+		ActionBar:
+			ActionView:
+				ActionPrevious:
+					on_release:app.root.current = 'menu'
+
+		BoxLayout:
+			size_hint_y: None
+			height: 50
+
+			Label:
+				id: tituloDaQuerry
+				text: "Criar Banco De Dados"
+
+			Button:
+				id: regressarQuerry
+				size_hint_x: None
+				font_size: 50
+				text: "<-"
+				on_release: root.regressarArquivo(), root.atualizarTituloDaQuerry(), root.atualizarCodeInput()
+			Button:
+				id: avancarQuerry
+				size_hint_x: None
+				font_size: 50
+				text: "->"
+				on_release: root.avancarArquivo(), root.atualizarTituloDaQuerry(), root.atualizarCodeInput()
+
+		GridLayout:
+			cols: 2
+			padding: 10
+			CodeInput:
+				id: codeInput
+				text: "def criarBancoDeDados(self, nomeDoBancoDeDados):\n\ttry:\n\t\tself.con = sqlite3.connect(nomeDoBancoDeDados)\n\t\tprint(""Banco De Dados Criado Com Sucesso"")\n\texcept:\n\t\tprint(""Erro"")\ncriarBancoDeDados(""RedeMeio.bd"")"
+			BoxLayout:
+				orientation: 'vertical'
+				size_hint_x: None
+				width: 300
+
+				spacing: 10
+				padding: 10
+
+				BoxLayout:
+					size_hint_y: None
+					height: 30
+					Button:
+						id: botaoExecutar
+						size_hint_y: None
+						font_size: 20
+						height: 30
+						text: 'EXECUTAR'
+						on_release: root.executarComando()
+					Button:
+						id: botaoSalvar
+						size_hint_y: None
+						font_size: 20
+						height: 30
+						text: 'SALVAR'
+						on_release: root.salvarModificacao()
+
+				TextInput:
+					id: telaDeResultado
+					text: "Resultado"

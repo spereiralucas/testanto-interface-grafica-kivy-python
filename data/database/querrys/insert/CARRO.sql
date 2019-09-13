@@ -1,0 +1,15 @@
+INSERT INTO CARRO
+	(placaCarro, modeloCarro, CPF)
+VALUES
+	("FWY7063", "Toyota Etios", 41912348896),
+	("ESC2424", "Suzuki Intruder", 12345678910),
+	("BFL0630", "Fiat Uno", 45945612399),
+	("FJO7171", "GM Onix", 44129403111),
+	("EYU7507", "GM Celta", 32383687114),
+	("BUW6588", "Fiat Argo", 55529657822),
+	("BIN7074", "VW Fusca", 45688896301),
+	("DDU5488", "VW Gol", 12045898766),
+	("OQU4449", "Hyundai HB20", 65812347887),
+	("RGB5813", "Ford Fusion", 71478955630),
+	("YRT0236", "Renault Logan", 65812347887),
+	("AYX4631", "Peugeout 408", 45945612399);
